@@ -1,0 +1,29 @@
+{
+  "extName": {
+    "message": "Bookmark 书签管理器"
+  },
+  "extDescription": {
+    "message": "Bookmark 书签管理器，在不同浏览器之间同步你的书签"
+  },
+  "update": {
+    "message": "上传书签"
+  },
+  "download": {
+    "message": "下载书签"
+  },
+  "clear": {
+    "message": "清空本地书签"
+  },
+  "setting": {
+    "message": "设置"
+  },
+  "help": {
+    "message": "帮助"
+  },
+  "github": {
+    "message": "Github"
+  },
+  "amount": {
+    "message": "书签"
+  }
+}
