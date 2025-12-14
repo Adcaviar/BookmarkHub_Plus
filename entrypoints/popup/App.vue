@@ -1,10 +1,10 @@
 <template>
   <div class="popup">
-    <a-divider style="margin: 1rem 0 1.5rem 0;height: 1px;">BookMark 书签管理器</a-divider>
+    <a-divider style="margin: 1rem 0 1.5rem 0;height: 1px;">{{ browser.i18n.getMessage("extensionName") }}</a-divider>
 
     <!-- 上传书签 -->
-    <a-popconfirm :title="browser.i18n.getMessage('confirm_update')" :ok-text="browser.i18n.getMessage('confirm')" :cancel-text="browser.i18n.getMessage('cancel')"
-      @confirm="confirm('upload')" @cancel="cancel">
+    <a-popconfirm :title="browser.i18n.getMessage('confirm_update')" :ok-text="browser.i18n.getMessage('confirm')"
+      :cancel-text="browser.i18n.getMessage('cancel')" @confirm="confirm('upload')" @cancel="cancel">
       <template #icon><question-circle-outlined style="color: red" /></template>
       <a-button type="text" :block="true" class="button">
         <CloudUploadOutlined />{{ browser.i18n.getMessage('uploadBookmarks') }}
@@ -12,8 +12,8 @@
     </a-popconfirm>
 
     <!-- 下载书签 -->
-    <a-popconfirm :title="browser.i18n.getMessage('confirm_download')" :ok-text="browser.i18n.getMessage('confirm')" :cancel-text="browser.i18n.getMessage('cancel')"
-      @confirm="confirm('download')" @cancel="cancel">
+    <a-popconfirm :title="browser.i18n.getMessage('confirm_download')" :ok-text="browser.i18n.getMessage('confirm')"
+      :cancel-text="browser.i18n.getMessage('cancel')" @confirm="confirm('download')" @cancel="cancel">
       <template #icon><question-circle-outlined style="color: red" /></template>
       <a-button type="text" :block="true" class="button">
         <CloudDownloadOutlined />{{ browser.i18n.getMessage('downloadBookmarks') }}
@@ -21,8 +21,8 @@
     </a-popconfirm>
 
     <!-- 清空本地书签 -->
-    <a-popconfirm :title="browser.i18n.getMessage('confirm_clear')" :ok-text="browser.i18n.getMessage('confirm')" :cancel-text="browser.i18n.getMessage('cancel')"
-      @confirm="confirm('removeAll')" @cancel="cancel">
+    <a-popconfirm :title="browser.i18n.getMessage('confirm_clear')" :ok-text="browser.i18n.getMessage('confirm')"
+      :cancel-text="browser.i18n.getMessage('cancel')" @confirm="confirm('removeAll')" @cancel="cancel">
       <template #icon><question-circle-outlined style="color: red" /></template>
       <a-button type="text" :block="true" class="button">
         <ClearOutlined />{{ browser.i18n.getMessage('removeAllBookmarks') }}
@@ -37,18 +37,18 @@
     </a-button>
 
     <!-- 帮助 -->
-    <a-button type="text" :block="true" class="button">
+    <a-button type="text" :block="true" class="button" @click="()=>{browser.tabs.create({url: 'https://github.com/Adcaviar/Bookmark_PLUS'})}">
       <QuestionCircleOutlined />{{ browser.i18n.getMessage('help') }}
     </a-button>
 
     <!-- github -->
-    <a-button type="text" :block="true" class="button">
+    <a-button type="text" :block="true" class="button" @click="()=>{browser.tabs.create({url: 'https://github.com/Adcaviar/Bookmark_PLUS'})}">
       <GithubOutlined />{{ browser.i18n.getMessage('github') }}
     </a-button>
 
     <a-button disabled type="text" :block="true" class="button">
       <BookOutlined />
-      {{ `${browser.i18n.getMessage('amount')} ${localBookCount}/${CloundBookCount} (本地/云端)` }}
+      {{ `${browser.i18n.getMessage('amount')} ${localBookCount}/${CloundBookCount} (${browser.i18n.getMessage('local')}/${browser.i18n.getMessage('online')})` }}
     </a-button>
   </div>
 </template>
@@ -72,7 +72,7 @@ const cancel = () => {
 onMounted(async () => {
   let data = await browser.storage.local.get(["localCount", "remoteCount"]);
   localBookCount.value = data.localCount
-  CloundBookCount.value = data.remoteCount
+  CloundBookCount.value = data.remoteCount ? data.remoteCount : 0
 })
 
 const sendMessage = (type: string) => {

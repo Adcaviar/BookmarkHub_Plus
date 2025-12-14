@@ -107,5 +107,11 @@
     "removeAllBookmarksDesc": {
         "message": "清空本地浏览器书签，请先做好备份",
         "description": ""
+    },
+    "local":{
+        "message":"本地"
+    },
+    "online":{
+        "message":"线上"
     }
 }
