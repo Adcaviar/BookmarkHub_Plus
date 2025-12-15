@@ -68,4 +68,4 @@
 
 采用 Apache License 2.0 许可
 
-源代码：[https://github.com/beny18241/BookmarkHub](https://github.com/dudor/BookmarkHub)
+源代码：[https://github.com/dudor/BookmarkHub](https://github.com/dudor/BookmarkHub)
