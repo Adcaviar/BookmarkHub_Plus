@@ -82,4 +82,4 @@ This project contains some code from... **[BookmarkHub](https://github.com/dudor
 Based on original BookmarkHub by dudor (https://github.com/dudor/BookmarkHub)
 Licensed under Apache License 2.0
 
-Source code: https://github.com/beny18241/BookmarkHub
+Source code: [https://github.com/beny18241/BookmarkHub](https://github.com/dudor/BookmarkHub)
