@@ -60,3 +60,12 @@
 本项目包含部分代码来自 **[BookmarkHub](https://github.com/dudor/BookmarkHub)**
 
 [BookmarkHub](https://github.com/dudor/BookmarkHub) 采用Apache License 2.0许可
+
+
+## 鸣谢：
+
+基于 dudor 的 BookmarkHub 原版（https://github.com/dudor/BookmarkHub）
+
+采用 Apache License 2.0 许可
+
+源代码：https://github.com/beny18241/BookmarkHub
